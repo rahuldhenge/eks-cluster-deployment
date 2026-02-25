@@ -36,12 +36,12 @@ resource "aws_eks_node_group" "node-grp" {
   subnet_ids      = data.aws_subnets.available-subnets.ids
   capacity_type   = "ON_DEMAND"
   disk_size       = "20"
-  instance_types  = ["t3.small""]
+  instance_types  = ["t3.small"]
   labels = tomap({ env = "dev" })
 
   scaling_config {
     desired_size = 2
-    max_size     = 3
+    max_size     = 2
     min_size     = 1
   }
 
